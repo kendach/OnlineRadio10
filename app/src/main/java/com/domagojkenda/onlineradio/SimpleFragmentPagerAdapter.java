@@ -1,5 +1,10 @@
 package com.domagojkenda.onlineradio;
 
+import android.app.Fragment;
+import android.content.Context;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private Context mContext;
@@ -11,14 +16,13 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     // This determines the fragment for each tab
     @Override
-    public Fragment getItem(int position) {
+    public android.support.v4.app.Fragment getItem(int position) {
         if (position == 0) {
             return new Fragment1();
         } else if (position == 1){
             return new Fragment2();
         } else {
             return new Fragment3();
-        }
         }
     }
 
@@ -34,13 +38,11 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
         // Generate title based on item position
         switch (position) {
             case 0:
-                return mContext.getString(R.string.category_usefulinfo);
+                return "Vijesti";
             case 1:
-                return mContext.getString(R.string.category_places);
+                return "Player";
             case 2:
-                return mContext.getString(R.string.category_food);
-            case 3:
-                return mContext.getString(R.string.category_nature);
+                return "Arhiva";
             default:
                 return null;
         }
